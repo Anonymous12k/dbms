@@ -1,0 +1,36 @@
+mysql> select facno,facname,deptno from facultys;
++-------+----------+--------+
+| facno | facname  | deptno |
++-------+----------+--------+
+|     1 | kishore  | AI     |
+|     2 | jaanavee | AI     |
+|     3 | malini   | bi0    |
+|     4 | Naveen   | IT     |
+|     5 | priya    | cse    |
++-------+----------+--------
+2),
+ select stud_name,std_regno,dept_name,course_score from course;
++-----------+-----------+-----------+--------------+
+| stud_name | std_regno | dept_name | course_score |
++-----------+-----------+-----------+--------------+
+| NULL      |      NULL | NULL      |         NULL |
+| NULL      |      NULL | NULL      |         NULL |
+| NULL      |      NULL | NULL      |         NULL |
+| NULL      |      NULL | NULL      |         NULL |
+| NULL      |      NULL | NULL      |           40 |
+| NULL      |      NULL | NULL      |           80 |
+| NULL      |      NULL | NULL      |          100 |
+| NULL      |      NULL | NULL      |          100 |
+| NULL      |      NULL | NULL      |          100 |
+| NULL      |      NULL | NULL      |          100 |
+| NULL      |      NULL | NULL      |          100 |
+| JAANAVEE  |      NULL | NULL      |          100 |
+| JAANAVEE  |      NULL | NULL      |          100 |
+| KISHORE   |      NULL | NULL      |          100 |
+| POOJA     |      NULL | NULL      |          100 |
+| kishore   | 192124038 | NULL      |           80 |
+| roshan    | 192124078 | NULL      |           90 |
+| haritha   | 192124036 | NULL      |           87 |
+| kishore   | 192124037 | NULL      |           43 |
+| kishore   | 192124038 | AI        |           80 |
+| roshan    | 192124078 | AI        |           90 |
