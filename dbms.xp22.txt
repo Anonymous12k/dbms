@@ -1,0 +1,68 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| employee           |
+| er                 |
+| mysql              |
+| performance_schema |
+| test               |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> use employee;
+Database changed
+mysql> create table bk(bk.no int(4),bk.name varchar(25),bk.author char(15),country char(15));
+ERROR 1050 (42S01): Table 'bk' already exists
+mysql> create table book(bk.no int(4),bk.name varchar(25),bk.author char(15),country char(15));
+ERROR 1103 (42000): Incorrect table name 'bk'
+mysql> create table book(book.no int(4),book.name varchar(25),book.author char(15),country char(15));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> describe book;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| no      | int(4)      | YES  |     | NULL    |       |
+| name    | varchar(25) | YES  |     | NULL    |       |
+| author  | char(15)    | YES  |     | NULL    |       |
+| country | char(15)    | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+mysql> insert into book values('1','your name','makoto shianki','japan',);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> insert into book values('1','your name','makoto shianki','japan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into book values('2','silent voice','reiko yosida','japan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into book values('3','garden of words','reiko','japan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select*from book;
++------+-----------------+----------------+---------+
+| no   | name            | author         | country |
++------+-----------------+----------------+---------+
+|    1 | your name       | makoto shianki | japan   |
+|    2 | silent voice    | reiko yosida   | japan   |
+|    3 | garden of words | reiko          | japan   |
++------+-----------------+----------------+---------+
+3 rows in set (0.00 sec)
+
+mysql> update book
+    -> set book.author='makoto shinaki'where book.no=3;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select*from book;
++------+-----------------+----------------+---------+
+| no   | name            | author         | country |
++------+-----------------+----------------+---------+
+|    1 | your name       | makoto shianki | japan   |
+|    2 | silent voice    | reiko yosida   | japan   |
+|    3 | garden of words | makoto shinaki | japan   |
++------+-----------------+----------------+---------+
+3 rows in set (0.00 sec)
