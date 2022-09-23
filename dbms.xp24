@@ -1,0 +1,40 @@
+mysql> create table car(car_no int(4),car_name varchar(15),doRENT date,return_date date);
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> describe car;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| car_no      | int(4)      | YES  |     | NULL    |       |
+| car_name    | varchar(15) | YES  |     | NULL    |       |
+| doRENT      | date        | YES  |     | NULL    |       |
+| return_date | date        | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+mysql> insert into car values('12','i20','2022.07.16','2022.07.20');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into car values('27','jeep','2022.10.18','2022.11.10');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into car values('4','swift','2021.10.30','2021.11.10');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from car;
++--------+----------+------------+-------------+
+| car_no | car_name | doRENT     | return_date |
++--------+----------+------------+-------------+
+|     12 | i20      | 2022-07-16 | 2022-07-20  |
+|     27 | jeep     | 2022-10-18 | 2022-11-10  |
+|      4 | swift    | 2021-10-30 | 2021-11-10  |
++--------+----------+------------+-------------+
+3 rows in set (0.00 sec)
+
+mysql> select car_no, car_name from car where return_date = '2022.11.10';
++--------+----------+
+| car_no | car_name |
++--------+----------+
+|     27 | jeep     |
++--------+----------+
+1 row in set (0.00 sec)

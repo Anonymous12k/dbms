@@ -1,0 +1,44 @@
+mysql> create table hospital(pat_no int (4),name varchar(15),admitted_date date,discharge_date date);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> describe hospital;
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| pat_no         | int(4)      | YES  |     | NULL    |       |
+| name           | varchar(15) | YES  |     | NULL    |       |
+| admitted_date  | date        | YES  |     | NULL    |       |
+| discharge_date | date        | YES  |     | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+mysql> insert into hospital values('237','madoka','2022.06.17','2022.08.21');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into hospital values('207','sakura','2022.06.07','2022.06.15');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into hospital values('103','haiyaku','2021.07.07','2021.08.11');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from hospital;
++--------+---------+---------------+----------------+
+| pat_no | name    | admitted_date | discharge_date |
++--------+---------+---------------+----------------+
+|    237 | madoka  | 2022-06-17    | 2022-08-21     |
+|    207 | sakura  | 2022-06-07    | 2022-06-15     |
+|    103 | haiyaku | 2021-07-07    | 2021-08-11     |
++--------+---------+---------------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> delete from hospital where pat_no=103;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select*from hospital;
++--------+--------+---------------+----------------+
+| pat_no | name   | admitted_date | discharge_date |
++--------+--------+---------------+----------------+
+|    237 | madoka | 2022-06-17    | 2022-08-21     |
+|    207 | sakura | 2022-06-07    | 2022-06-15     |
++--------+--------+---------------+----------------+
+2 rows in set (0.00 sec)
