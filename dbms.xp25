@@ -1,0 +1,17 @@
+mysql> create table std_pro(std_name varchar(15),std_regno int(8),std_gender char(8),marks int(4),std_dept char(4));
+Query OK, 0 rows affected (0.02 sec)
+mysql> insert into std_pro values('kishore','12','male','80','AI');
+Query OK, 1 row affected (0.00 sec)
+mysql> insert into std_pro values('priya','10','female','90','bio');
+Query OK, 1 row affected (0.00 sec)
+mysql> insert into std_pro values('priya','10','female','90','bio');
+Query OK, 1 row affected (0.00 sec)
+mysql> select*from std_pro;
++----------+-----------+------------+-------+----------+
+| std_name | std_regno | std_gender | marks | std_dept |
++----------+-----------+------------+-------+----------+
+| kishore  |        12 | male       |    80 | AI       |
+| priya    |        10 | female     |    90 | bio      |
+| roshan   |        13 | male       |    90 | it       |
++----------+-----------+------------+-------+----------+
+3 rows in set (0.00 sec)
